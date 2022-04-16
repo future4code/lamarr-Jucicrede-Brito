@@ -64,6 +64,98 @@ d. Booleano*/
 // console.log("O segundo numero é divisível pelo primeiro?", numero2 % numero1 === 0)
 
 
+//  Desafio
+
+// //1.
+
+// (KELVIN) = (GRAUS_FAHRENHEIT - 32)*(5/9) + 273.15
+
+// (GRAUS_FAHRENHEIT) = (GRAUS_CELSIUS)*(9/5) + 32
+
+// let fahrenheit = 77
+// let celsius = 80
+// let celsius1 = 30
+
+// let fahrenheitKelvin = (fahrenheit - 32)*(5/9) + 273.15
+
+// let celsiusFahrenheit = (celsius)*(9/5) + 32
+
+// let grausF = (celsius1 - 32)*(5/9) + 273.15
+
+// let grausK = (celsius1)*(9/5) + 32
+
+// console.log(fahrenheitKelvin, "K°")
+
+// console.log(celsiusFahrenheit, "F°")
+
+// console.log(grausF, "K°")
+
+// console.log(grausK, "F°")
+
+// let grausCelsius = Number(prompt("Insira uma temperatura em graus"))
+
+// console.log(celsiusFahrenheit, "C°")
+
+//2.
+// let custoQuilowattHora = 0.05
+// let consumoResidencia = 280
+// let porcentagemdesconto = 0.15
+
+// let multi = custoQuilowattHora * consumoResidencia
+
+// console.log(multi)
+
+// let multi2 = (consumoResidencia * porcentagemdesconto) - 280
+
+// console.log(multi2)
+
+//3.
+// let libra = 20
+// let quilograma = 2.204616
+// let libraQuilograma = libra / quilograma
+// console.log( "20lb equivalem a", libraQuilograma, "kg")
+
+// let onca = 10.5
+// let quilograma = 0.0283495
+// let oncaQuilograma = onca * quilograma
+// console.log("10.5oz equivalem a", oncaQuilograma, "kg" )
+
+// let milha = 100
+// let metro = 1609.34
+// let milhaMetro = milha * metro
+// console.log("100mi equivalem a", milhaMetro, "m")
+
+// let pes = 50
+// let metro2 = 0.3048
+// let pesmetro = pes * metro2
+// console.log("50ft equivalem a", pesmetro, "m")
+
+// let galao = 103.56
+// let litro = 4.54609
+// let galaoLitro = galao * litro
+// console.log("103.56gal equivalem a", galaoLitro, "l")
+
+// let xicaras = 450
+// let litro2 = 0.24
+// let xicarasLitro = xicaras * litro2
+// console.log("450 xic equivalem a", xicarasLitro, "l")
+
+// let informacao = Number(prompt("Quantas xicaras de farinha leva na receita do bolo?"))
+// console.log(informacao, "xic")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
