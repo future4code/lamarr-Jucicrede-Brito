@@ -29,34 +29,71 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-
-}
+  const numerosParesElevadosADois = []
+  const numeroPar = array.filter((array)=>(array%2===0))
+  for(numero of numeroPar){
+    const elevadoADois = numero * numero
+    numerosParesElevadosADois.push(elevadoADois)}
+    return numerosParesElevadosADois
+  }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+  return Math.max.apply(null, array)
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+let numero
+let diferenca
+let objeto
+if (num1 > num2){
+  numero = num1
+  diferenca = num1 - num2
+  objeto = num1 % num2 ===0
+}else{
+  numero = num2
+  diferenca = num2 - num1
+  objeto = num2 % num1 ===0
+}
+retorno = {
+  maiorNumero: numero,
+  maiorDivisivelPorMenor: objeto,
+  diferenca: diferenca,
+}
+return retorno
 
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
+  const numerosPares = []
+  for (let i = 0; numerosPares.length < n; i++){
+    if (i % 2 == 0){
+      numerosPares.push(i)
+    }
+  }
+  return numerosPares
    
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+if (ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC){
+return ("Escaleno")}
+else if (ladoA === ladoB && ladoB === ladoC){
+return ("Equilátero")}
+else{
+return("Isósceles");
+}
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
+ 
+
   
 }
-
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
    
