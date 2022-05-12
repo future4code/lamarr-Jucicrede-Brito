@@ -90,28 +90,54 @@ return("Isósceles");
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
- 
-
-  
+  function numeros (a,b){
+    return (a -b)
+  }
+  array.sort(numeros)
+  maior = array[array.length -2]
+  menor = array[1]
+  return [maior, menor]
 }
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+ 
+const frase = (`Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`)
+   return frase
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+ const novaPessoa = {
+   ...pessoa,
+   nome:"ANÔNIMO"
+ }
+ return novaPessoa
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+  
+   return pessoas.filter(pessoa => {
+     return(
+       pessoa.altura >= 1.5 && pessoa.idade<60 &&
+       pessoa.idade>14 
+     )
+   }
+
+   )
+   return retornaPessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  return pessoas.filter(naoAutorizada => {
+    return(
+      naoAutorizada.altura < 1.5 || naoAutorizada.idade >= 60 ||
+      naoAutorizada.idade <= 14 
+    )
+  }
+  ) 
+  return retornaPessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 14
