@@ -142,15 +142,29 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
+contas.forEach((soma) =>{
+  let somaDasCompras = 0
+  soma.compras.forEach((valor)=>{
+    somaDasCompras += valor
+  })
+  soma.saldoTotal -= somaDasCompras
+  soma.compras = []
+})
+return contas
 
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
-}
+ return consultas.sort((a,b) => a.nome > b.nome ? 1 : a.nome < b.nome ? -1 :0)
+ }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+  for(let i = 0; i < 3 ; i++){
+    consultas.sort((a, b)=> a.dataDaConsulta.split(`/`)[i] > b.dataDaConsulta.split(`/`)[i]? 1 : a.dataDaConsulta.split(`/`)
+    )
 }
+return consultas
+}
+
