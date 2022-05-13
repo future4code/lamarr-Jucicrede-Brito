@@ -1,0 +1,11 @@
+7 Passos Fundamentais 
+
+1. Ter Atenção no Enunciado
+2. Retirar Informações Relevantes
+3. Pensar nas Entradas e Saídas
+4. Fazer Um Esquema Visual
+5. Criar Um Código Feio 
+6. Testar: Força-Bruta
+7. Refatorar
+
+Utilizando os 7 Passos podemos averiguar melhor forma de resolver os problemas.
