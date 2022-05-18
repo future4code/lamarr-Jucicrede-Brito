@@ -1,4 +1,3 @@
-
 /**
  * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
  * 
@@ -11,7 +10,3 @@
  * 
  * 
  */
-const jogadores = []
-jogadores.push(cartas.naipes)
-
-
