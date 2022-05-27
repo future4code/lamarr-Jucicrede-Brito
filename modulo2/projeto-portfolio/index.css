@@ -22,7 +22,7 @@ li a{
 .conteudo-texto{
     font-family: Courier New;
     font-weight: bold;
-    color: rgb(154, 41, 154);
+    color: rgb(197, 65, 197);
     font-size: 18px;
 }
 h1{
@@ -95,6 +95,6 @@ button:active{
      background-color: pink;
  }
  .logo{
-     font-family:monospace;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
      color: rgb(239, 89, 186);
  }
