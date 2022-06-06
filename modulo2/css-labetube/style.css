@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.conteiner{
+    display: grid;
+    grid-template-rows: auto 80vh 8vh;
+}
+header{
+    background-color: rgb(255, 106, 0);
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    justify-items: end;
+    align-items: center;
+}
+.meio{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+button{
+    margin-left: 10px;
+    padding: 4px 8px 4px 8px;
+    color: black;
+    
+}
+.Principal{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(2,2fr);
+    align-items:center;
+    gap:5px;
+    margin:50px;
+
+}
+.carde{
+    display:grid;
+    justify-items:center;
+    grid-template-rows: auto 1fr;
+    
+}
+.acessar{
+    margin-left: 10px;
+    padding: 2px 4px 2px 4px;
+    color: black;
+    background-color: rgb(210, 223, 68);
+}
+.imagem{
+  width: 300px; 
+  height: 200px;   
+}
+h2{
+font-size: 20px;
+
+}
+.rodape{
+    background-color: rgb(48, 48, 48);
+    color: aliceblue;
+}
+.video{
+    width: 150px; 
+    height: 150px; 
+    margin: 150px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content:center;
+}
+.linkvideo{
+    color: rgb(9, 81, 13);
+    font-family: 'Courier New', Courier, monospace;
+}
