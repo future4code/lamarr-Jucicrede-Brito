@@ -8,50 +8,37 @@ import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 
-
 function Post(props){
   
-  const [state, setState] = useState({
-    curtido: false,
-    numeroCurtidas: 1,
-    comentando: false,
-    numeroComentarios: 2,
-  })
-
-  const [numeroCurtidas, setnumeroCurtidas] = useState (0)
+  const [numeroCurtidas, setNumeroCurtidas] = useState (0)
   const [curtido, setCurtido] = useState(false)
   const [comentando, setComentando] = useState(false)
   const [numeroComentarios, setNumeroComentarios] = useState(0)
-  const [respostaUsuario, setRespostausuario] = useState("")
-  const handleRespostaUsuario = (event) => {
-    setRespostausuario(event.target.value)
-
-    console.log(respostaUsuario)
-  }
-
+  const [respostaUsuario, setRespostaUsuario] = useState("")
+  
 
   const onClickCurtida = () => {
     setCurtido(!curtido)
     if (curtido){
-      setnumeroCurtidas(numeroCurtidas - 1);
+      setNumeroCurtidas(numeroCurtidas - 1);
     }else {
-      setnumeroCurtidas(numeroCurtidas + 1);
+      setNumeroCurtidas(numeroCurtidas + 1);
     }
     console.log('Curtiu!')
   }
   
   const onClickComentario = () => {
     setComentando(!comentando)
-    if(comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario} resposta = {respostaUsuario} 
-      onChangeComentario = {handleRespostaUsuario}/>
-    }
+
     console.log(comentando)
   }
   
   const aoEnviarComentario = () => {
     setComentando(false)
+    setRespostaUsuario("")
     setNumeroComentarios(numeroComentarios + 1)
+
+    console.log(respostaUsuario)
   }
 
   let iconeCurtida
@@ -65,7 +52,7 @@ function Post(props){
     let componenteComentario
 
     if(comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario}/>
+      componenteComentario = <SecaoComentario valorInput={respostaUsuario} onChangeComentario={(event)=>{setRespostaUsuario(event.target.value);}} aoEnviar={aoEnviarComentario}/>
     }
 
   return(
