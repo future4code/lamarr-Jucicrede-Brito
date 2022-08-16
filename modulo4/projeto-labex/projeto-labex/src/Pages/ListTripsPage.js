@@ -8,10 +8,10 @@ import { Base_Url } from "../constants/constants";
 export function ListTripsPage () {
     const navigate = useNavigate();
 
-    const [dataTripList,isLoadingUser,erroUser] = useRequestData(`${Base_Url}trips`)
+    const [dataTripList] = useRequestData(`${Base_Url}trips`)
 
     const tripList = dataTripList&&dataTripList.trips.map((trip)=>{
-        return <li key={trip.id}>{trip.name}</li>
+        return <li key={trip.id}>{trip.name}<button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button></li>
 
     })
 
@@ -26,13 +26,13 @@ export function ListTripsPage () {
         <>
         <h1>Lista de Viagem</h1>
         <p>Para vermos todas as viagens</p>
-        {isLoadingUser&&"...Carregando!!! ...."}
+        {/* {isLoadingUser&&"...Carregando!!! ...."} */}
         <ul>
-            {!isLoadingUser&&dataTripList&&erroUser}
+            {tripList}
         </ul>
-        {!isLoadingUser&&!dataTripList&&tripList}
+        {/* {!isLoadingUser&&!dataTripList&&tripList} */}
         <button onClick={()=>{goToHomePage(navigate)}}>Voltar</button>
-        <button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button>
+        
         </>
         )
     }

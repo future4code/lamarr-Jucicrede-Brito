@@ -1,1 +1,1 @@
-export const Base_Url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/jucicrede-machado-lammar'
+export const Base_Url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/jucicrede-machado-lammar/'
