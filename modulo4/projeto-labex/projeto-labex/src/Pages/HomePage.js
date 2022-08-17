@@ -8,8 +8,8 @@ export function HomePage () {
     //     navigate("/login")
     // }
 
-    const goToAdimHomePage = () => {
-        navigate("/admin")
+    const goToLoginPage = () => {
+        navigate("/login")
     }
 
     const goToListPage = () => {
@@ -21,7 +21,7 @@ export function HomePage () {
         <>
     <h1>Labex</h1>
     <button onClick={goToListPage}>Ver Viagens</button>
-    <button onClick={goToAdimHomePage}>Área Admin</button>
+    <button onClick={goToLoginPage}>Área Admin</button>
     </>
     )  
    

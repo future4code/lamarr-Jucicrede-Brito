@@ -23,6 +23,7 @@ export function AdminHomePage () {
     <button onClick={goToBack}>Voltar</button>
     <button onClick={goToFormApplicPage}>Formulário</button>
     <button onClick={goToDetailsPage}>Detalhes</button>
+    
     </>
     )
 }

@@ -25,7 +25,7 @@ export function ListTripsPage () {
     return(
         <>
         <h1>Lista de Viagem</h1>
-        <p>Para vermos todas as viagens</p>
+       
         {/* {isLoadingUser&&"...Carregando!!! ...."} */}
         <ul>
             {tripList}
