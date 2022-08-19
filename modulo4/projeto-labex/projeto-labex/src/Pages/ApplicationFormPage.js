@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { goToBack } from "../Rotas/coordinator";
 
 export function ApplicationFormPage () {
     const navigate = useNavigate();
 
-    const goToBack=()=>{
-        navigate(-1)
-
-    }
-
-    const [inputName, setInputName] = useState("bananinhas")
+    const [inputName, setInputName] = useState("")
     const [inputIdade, setInputIdade] = useState("")
     const [inputTexto, setInputTexto] = useState("")
     const [inputProf, setInputProf] = useState("")
@@ -45,7 +41,7 @@ export function ApplicationFormPage () {
             <input required placeholder="País" value={inputPais} onChange={(event)=>{setInputPais(event.target.value)}}/>
             <button onClick={onSubmit}>Enviar</button>
         </form>
-        <button onClick={goToBack}>Voltar</button>
+        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
        
         </>
         )

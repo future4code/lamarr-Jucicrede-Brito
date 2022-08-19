@@ -1,28 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useProtectedPage } from "../hooks/useProtectedPage";
+import { goToFormApplicPage, goToBack, goToDetailsPage } from "../Rotas/coordinator";
 
 export function AdminHomePage () {
+   
+    useProtectedPage()
+
     const navigate=useNavigate();
-
-    const goToFormApplicPage = () => {
-        navigate("/criate")
-    }
-
-    const goToBack=()=>{
-        navigate(-1)
-    }
-
-    const goToDetailsPage = () => {
-        navigate("/details")
-    }
 
     return(
     <>
     <h1>AdminHomePage</h1>
     <p>Lista de viagem</p>
-    <button onClick={goToBack}>Voltar</button>
-    <button onClick={goToFormApplicPage}>Formulário</button>
-    <button onClick={goToDetailsPage}>Detalhes</button>
+    <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
+    <button onClick={()=>{goToFormApplicPage(navigate)}}>Formulário</button>
+    <button onClick={()=>{goToDetailsPage(navigate)}}>Detalhes</button>
     
     </>
     )

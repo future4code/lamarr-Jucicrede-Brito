@@ -1,17 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { goToBack } from "../Rotas/coordinator";
+import { useProtectedPage } from "../hooks/useProtectedPage";
 
 export function TripDetailsPage () {
-    const navigate=useNavigate();
 
-    const goToBack=()=>{
-        navigate(-1)
-    }
+    useProtectedPage()
+
+    const navigate=useNavigate();
 
     return (
         <>
         <h1>Detalhes da viagem </h1>
-        <button onClick={goToBack}>Voltar</button>
+        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         </>
     )
    
