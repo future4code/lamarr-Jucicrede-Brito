@@ -5,7 +5,7 @@ import { goToBack } from "../Rotas/coordinator";
 export function ApplicationFormPage () {
     const navigate = useNavigate();
 
-    const [inputName, setInputName] = useState("")
+    const [inputName, setInputName] = useState("bananinhas")
     const [inputIdade, setInputIdade] = useState("")
     const [inputTexto, setInputTexto] = useState("")
     const [inputProf, setInputProf] = useState("")
@@ -28,6 +28,7 @@ export function ApplicationFormPage () {
     return(
         <>
         <h1>Inscreva-se para uma viagem</h1>
+        
         <form onSubmit={onSubmit}>
             <label>Nome</label>
             <input required placeholder="nome" value={inputName} onChange={(event)=>{setInputName(event.target.value)}}/>
@@ -42,7 +43,7 @@ export function ApplicationFormPage () {
             <button onClick={onSubmit}>Enviar</button>
         </form>
         <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-       
         </>
         )
     }
+

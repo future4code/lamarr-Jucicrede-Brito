@@ -7,6 +7,9 @@ export const useForms = (initialState)=>{
         const {name, value} = event.target
         setForm({...form, [name]: value})
     }
+    const clear = () => {
+        setForm(initialState) //limpar inputs
+    }
     
-    return[form, onChange]
+    return[form, onChange, clear]
 }

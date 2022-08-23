@@ -2,7 +2,7 @@ export const goToBack=(navigate)=>{
     navigate(-1)
 }
 export const goToFormApplicPage = (navigate) => {
-    navigate("/criate")
+    navigate("/application")
 }
 export const goToDetailsPage = (navigate) => {
     navigate("/details")
@@ -18,3 +18,6 @@ export const goToListPage = (navigate) => {
 export const goToHomePage = (navigate) => {
     navigate("/")
 }
+ export const goToTripPage = (navigate) =>{
+    navigate("/criate")
+ }

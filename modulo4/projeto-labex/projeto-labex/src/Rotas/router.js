@@ -18,7 +18,7 @@ export function Rotas(){
             <Route path="/criate" element={<CriateTripPage/>}/>
             <Route path="/list" element={<ListTripsPage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
-            <Route path="/details" element={<TripDetailsPage/>}/>
+            <Route path="/details/trips/:id"  element={<TripDetailsPage/>}/>
 
         </Routes>
         

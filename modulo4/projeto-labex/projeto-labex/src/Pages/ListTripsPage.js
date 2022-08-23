@@ -2,14 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../hooks/useRequestData";
 import { Base_Url } from "../constants/constants";
-import { goToFormApplicPage, goToHomePage } from "../Rotas/coordinator";
+import { goToFormApplicPage, goToBack } from "../Rotas/coordinator";
 
 
 
 export function ListTripsPage () {
     const navigate = useNavigate();
 
-    const [dataTripList] = useRequestData(`${Base_Url}trips`)
+    const [dataTripList,isLoadingUser,erroUser] = useRequestData(`${Base_Url}trips`)
 
     const tripList = dataTripList&&dataTripList.trips.map((trip)=>{
         return <li key={trip.id}>{trip.name}<button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button></li>
@@ -22,13 +22,13 @@ export function ListTripsPage () {
         <>
         <h1>Lista de Viagem</h1>
        
-        {/* {isLoadingUser&&"...Carregando!!! ...."} */}
+        {isLoadingUser&&"...Carregando!"}
         <ul>
-            {tripList}
+            {!isLoadingUser&&dataTripList&&tripList}
         </ul>
-        {/* {!isLoadingUser&&!dataTripList&&tripList} */}
-        <button onClick={()=>{goToHomePage(navigate)}}>Voltar</button>
-        
+        {!isLoadingUser&&!dataTripList&&erroUser}
+        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         </>
+        
         )
     }
