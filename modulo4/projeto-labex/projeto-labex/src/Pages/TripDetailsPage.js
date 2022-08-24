@@ -1,9 +1,9 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { goToBack } from "../Rotas/coordinator";
 import { useProtectedPage } from "../hooks/useProtectedPage";
-// import axios from "axios";
-// import { useForms } from "../hooks/useForms";
+import axios from "axios";
+
 
 export function TripDetailsPage () {
 
@@ -11,13 +11,25 @@ export function TripDetailsPage () {
 
     const navigate=useNavigate();
 
-    // const [form, onChange, clear] = useForm({ planet: "", durationInDays: "",date: "",
-    // name: "", description: "", candidates: ""   })
 
-    
+    const {id} = useParams()
+    const url=`https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trip/NoIFVcOiSgTKTIPVZwXS`
+    const[tripDetails, setTripDetail] = useState(null)
+    let content = null
 
+    useEffect (()=>{
+        const token = localStorage.getItem("token");
+        axios.get(url,
+            {
+                headers:{
+                    auth:token
+                }
+            }).then((response)=>{console.log(response.data)})
+            .catch((erro)=>{console.log("Deu erro:", erro.response)},[]);
+            
+    })
 
-    
+    const pathParams = useParams();
 
     return (
         <>
@@ -29,3 +41,4 @@ export function TripDetailsPage () {
     )
    
 }
+
