@@ -4,8 +4,8 @@ export const goToBack=(navigate)=>{
 export const goToFormApplicPage = (navigate) => {
     navigate("/application")
 }
-export const goToDetailsPage = (navigate) => {
-    navigate("/details")
+export const goToDetailsPage = (navigate, id) => {
+    navigate(`/details/trips/${id}`)
 }
 export const goToLoginPage = (navigate) => {
     navigate("/login")

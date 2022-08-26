@@ -21,11 +21,11 @@ export function CriateTripPage () {
             durationInDays:form.durationInDays}
         console.log(body);
         axios.post(`${Base_Url}trips`, body,{headers:{auth:localStorage.getItem('token')}})
-           .then((responde)=>{
-            alert("Viagem cadastrada com sucesso")
+           .then((response)=>console.log(response),
+            alert("Viagem cadastrada com sucesso"))
+            .catch((error)=>console.log(error))
             clear();
-        })
-        .catch((error)=>console.log(error))
+        
         }
 
     return(

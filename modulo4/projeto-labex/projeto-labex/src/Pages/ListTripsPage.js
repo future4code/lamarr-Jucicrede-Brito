@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../hooks/useRequestData";
 import { Base_Url } from "../constants/constants";
 import { goToFormApplicPage, goToBack } from "../Rotas/coordinator";
+import { ContainerTravel, MyButton2, Travel, H1, MyButton } from "../Style";
 
 
 
@@ -12,23 +13,25 @@ export function ListTripsPage () {
     const [dataTripList,isLoadingUser,erroUser] = useRequestData(`${Base_Url}trips`)
 
     const tripList = dataTripList&&dataTripList.trips.map((trip)=>{
-        return <li key={trip.id}>{trip.name}<button onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</button></li>
+        return <li key={trip.id}>{trip.name}<MyButton2 onClick={()=>{goToFormApplicPage(navigate)}}>Inscrever-se</MyButton2></li>
 
     })
 
-    
-
     return(
         <>
-        <h1>Lista de Viagem</h1>
-       
+        <H1>Lista de Viagem</H1>
+        <MyButton2 onClick={()=>{goToBack(navigate)}}>Voltar</MyButton2>
+       <Travel>
         {isLoadingUser&&"...Carregando!"}
-        <ul>
+        <>
             {!isLoadingUser&&dataTripList&&tripList}
-        </ul>
-        {!isLoadingUser&&!dataTripList&&erroUser}
-        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         </>
+        {!isLoadingUser&&!dataTripList&&erroUser}
+
+        </Travel>
+        <ContainerTravel/>
+        </>
+
         
         )
     }
