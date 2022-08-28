@@ -5,6 +5,7 @@ import { useProtectedPage } from "../hooks/useProtectedPage";
 import { useRequestData } from "../hooks/useRequestData";
 import { goToTripPage, goToBack, goToDetailsPage } from "../Rotas/coordinator";
 import axios from "axios";
+import { H1, MyButton, MyForm3, PageAdmin } from "../Style";
 
 export function AdminHomePage () {
     useProtectedPage()
@@ -30,14 +31,14 @@ export function AdminHomePage () {
     })
 
     return(
-    <>
-    <h1>Área Administrativa</h1>
-    
+        <PageAdmin>
+            <H1>Área Administrativa</H1>
+        
+    <MyForm3>
     {requisitionTrip}
-    
-    <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-    <button onClick={()=>{goToTripPage(navigate)}}>Formulário</button>
-
-    </>
+    </MyForm3>
+    <MyButton onClick={()=>{goToTripPage(navigate)}}>Formulário</MyButton>
+    <MyButton onClick={()=>{goToBack(navigate)}}>Voltar</MyButton>
+    </PageAdmin>
     )
 }

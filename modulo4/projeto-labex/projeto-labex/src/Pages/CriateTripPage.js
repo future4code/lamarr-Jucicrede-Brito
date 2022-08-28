@@ -5,6 +5,7 @@ import { useProtectedPage } from "../hooks/useProtectedPage";
 import { useForms } from "../hooks/useForms";
 import { Base_Url } from "../constants/constants"; 
 import axios from "axios";
+import { MyButton2, MyForm4, H1, Animation } from "../Style";
 
 export function CriateTripPage () {
     useProtectedPage()
@@ -29,9 +30,9 @@ export function CriateTripPage () {
         }
 
     return(
-        <>
-        <h1>Criar Formulário</h1>
-        < form onSubmit={novaViagem}>
+        <Animation>
+        <H1>Criar Formulário</H1>
+        < MyForm4 onSubmit={novaViagem}>
             <h1>Registrar nova viagem</h1>
             <label htmlFor="name">Nome</label>
             <input type="text" name='name' value={form.name} id="name" onChange={onChange} required/>
@@ -43,9 +44,9 @@ export function CriateTripPage () {
             <input type="text" name='description' value={form.description} id="description" onChange={onChange} required />
             <label htmlFor="durationInDays">Duração</label>
             <input type="text" name='durationInDays' value={form.durationInDays} id="durationInDays" onChange={onChange} required />
-            <button>Cadstrar viagem</button>
-        </form>
-        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-        </>
+            <button>Cadastrar viagem</button>
+        </MyForm4>
+        <MyButton2 onClick={()=>{goToBack(navigate)}}>Voltar</MyButton2>
+        </Animation>
         )
     }

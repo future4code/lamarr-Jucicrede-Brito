@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../hooks/useRequestData";
 import { Base_Url } from "../constants/constants";
 import { goToFormApplicPage, goToBack } from "../Rotas/coordinator";
-import { ContainerTravel, MyButton2, Travel, H1, MyButton } from "../Style";
+import { ContainerTravel, MyButton2, Travel } from "../Style";
 
 
 
@@ -18,20 +18,18 @@ export function ListTripsPage () {
     })
 
     return(
-        <>
-        <H1>Lista de Viagem</H1>
-        <MyButton2 onClick={()=>{goToBack(navigate)}}>Voltar</MyButton2>
-       <Travel>
+        <ContainerTravel>
+            <MyButton2 onClick={()=>{goToBack(navigate)}}>Voltar</MyButton2>
+        <Travel>
+       <h1>Lista de Viagem</h1>
         {isLoadingUser&&"...Carregando!"}
         <>
             {!isLoadingUser&&dataTripList&&tripList}
         </>
         {!isLoadingUser&&!dataTripList&&erroUser}
-
         </Travel>
-        <ContainerTravel/>
-        </>
-
+        
+        </ContainerTravel>
         
         )
     }

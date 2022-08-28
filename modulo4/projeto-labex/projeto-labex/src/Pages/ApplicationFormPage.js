@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToBack } from "../Rotas/coordinator";
+import{MyForm, MyButton, H1, ComeBack, PageForm} from "../Style"
 
 export function ApplicationFormPage () {
     const navigate = useNavigate();
 
-    const [inputName, setInputName] = useState("bananinhas")
+    const [inputName, setInputName] = useState("")
     const [inputIdade, setInputIdade] = useState("")
     const [inputTexto, setInputTexto] = useState("")
     const [inputProf, setInputProf] = useState("")
@@ -26,10 +27,10 @@ export function ApplicationFormPage () {
 
     }
     return(
-        <>
-        <h1>Inscreva-se para uma viagem</h1>
-        
-        <form onSubmit={onSubmit}>
+        <PageForm>
+        <H1>Inscreva-se para uma viagem</H1>
+        <ComeBack onClick={()=>{goToBack(navigate)}}>Voltar</ComeBack>
+        <MyForm onSubmit={onSubmit}>
             <label>Nome</label>
             <input required placeholder="nome" value={inputName} onChange={(event)=>{setInputName(event.target.value)}}/>
             <label>Idade</label>
@@ -40,10 +41,10 @@ export function ApplicationFormPage () {
             <input required placeholder="Profisão" value={inputProf} onChange={(event)=>{setInputProf(event.target.value)}}/>
             <label>País</label>
             <input required placeholder="País" value={inputPais} onChange={(event)=>{setInputPais(event.target.value)}}/>
-            <button onClick={onSubmit}>Enviar</button>
-        </form>
-        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-        </>
+            <MyButton onClick={onSubmit}>Enviar</MyButton>
+        </MyForm>
+        
+        </PageForm>
         )
     }
 

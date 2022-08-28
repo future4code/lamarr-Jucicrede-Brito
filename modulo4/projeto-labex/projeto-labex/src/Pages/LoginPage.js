@@ -4,7 +4,7 @@ import { goToBack } from "../Rotas/coordinator";
 import { useNavigate } from "react-router-dom";
 import { useForms } from "../hooks/useForms";
 import { Base_Url } from "../constants/constants";
-import {Travel,MyForm, MyButton2} from "../Style"
+import {Login, MyForm, MyButton2} from "../Style"
 
 export function LoginPage() {
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ export function LoginPage() {
     }
 
     return (
-        <Travel>
+        <Login>
             <h1>Login</h1>
             <MyForm onSubmit={fazerLogin}>
                 <label htmlFor="email">Email:</label>
@@ -51,6 +51,6 @@ export function LoginPage() {
                 <button type="submit" >Enviar </button>
             </MyForm>
             <MyButton2 onClick={() => { goToBack(navigate) }}>Voltar</MyButton2>
-        </Travel>
+        </Login>
     )
 }
