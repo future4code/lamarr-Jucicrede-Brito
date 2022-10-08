@@ -5,25 +5,28 @@ const listaClientes = [
     {id: 4, nome:"Fulana"},
 ]
 
-const listaCadastro = (id,nome) => {
+    
+let cadastro = (id, nome) => {
 
-    let novaLista = [].concat(listaClientes)
+    let novaLista = [...listaClientes]
     novaLista.push({id,nome})
-    console.log(novaLista);
-
+    console.log(novaLista)
 }
-listaCadastro(5, "Juci")
+
+    cadastro(5,"Luke Skywalker")
 
 
 
 // Geração de tabuada
 
-const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numeros = 5
 
 const tabuada = () => {
-    for (let i=0; 1<10; i++)
+    for (let i=0; 1<=10; i++)
          
-    return numeros*i
+    console.log (`${i} x ${numeros} = ${i*numeros}`)
 
 }
-console.log (tabuada)
+console.log(tabuada)
+
+
