@@ -1,9 +1,19 @@
+
 POST http://localhost:3003/user
 Content-Type: application/json
 
 {
-  "id": "2134",
-  "name": "Pam Beasly",
-  "email": "pam@dundermifflin.com",
-  "password": "fa8s7e6fia7se6ga8i67gf9a7se6f8a7s6e5gaes"
+  "name": "Paula",
+  "email": "paula@dundermifflin.com",
+  "password": "1235367dgj"
 }
+
+###
+GET http://localhost:3003/user
+Content-Type: application/json
+
+
+### Delete User
+DELETE http://localhost:3003/user/1674069542309
+Content-Type: application/json
+

@@ -1,4 +1,5 @@
 import { UserDatabase } from "../data/UserDatabase"
+import { user } from "../types/user";
 
 export class UserBusiness {
 
@@ -36,6 +37,18 @@ export class UserBusiness {
         }
         
     }
-    findUser = () => {}
-    delereUser = () => {}
+     async get():Promise<user[]> {
+
+        return await new UserDatabase().get()
+    }
+    
+    deleteUser = async (input: {id:string}) => {
+                
+        if(!input.id){
+            throw new Error("Insira um id!")
+        }
+
+            return await new UserDatabase().deleteUser(input.id);
+        }
+
 }
