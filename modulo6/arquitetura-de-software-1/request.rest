@@ -1,0 +1,9 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+  "id": "2134",
+  "name": "Pam Beasly",
+  "email": "pam@dundermifflin.com",
+  "password": "fa8s7e6fia7se6ga8i67gf9a7se6f8a7s6e5gaes"
+}
