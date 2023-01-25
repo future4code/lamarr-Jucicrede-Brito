@@ -1,5 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase"
 import { v4 as generateId } from 'uuid'
+import { User } from "../types/User"
 
 export class UserBusiness {
   async create({ email, name, password }: any):Promise<void> {
@@ -17,5 +18,9 @@ export class UserBusiness {
       password
     })
   }
+  async get():Promise<User[]> {
+
+    return await new UserDatabase().get()
+}
 
 }
